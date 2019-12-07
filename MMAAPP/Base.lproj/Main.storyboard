@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dbh-o4-fh1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MAPS-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="MMAAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zon-xa-w0Y" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="634"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-Eh-n3G">
+                                <rect key="frame" x="12" y="770" width="390" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="pcv-gU-Xd5"/>
+                                </constraints>
+                                <state key="normal" title="Bangkok"/>
+                                <connections>
+                                    <action selector="touchBangkokButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zhZ-aZ-lcS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zon-xa-w0Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7N7-yR-hF6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zon-xa-w0Y" secondAttribute="trailing" id="M5y-kR-cqn"/>
+                            <constraint firstItem="Vzn-Eh-n3G" firstAttribute="top" secondItem="zon-xa-w0Y" secondAttribute="bottom" constant="48" id="OJs-wK-Stc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vzn-Eh-n3G" secondAttribute="trailing" constant="12" id="TT3-wz-xc8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vzn-Eh-n3G" secondAttribute="bottom" constant="48" id="d4r-a5-vLi"/>
+                            <constraint firstItem="zon-xa-w0Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h9Y-yu-flL"/>
+                            <constraint firstItem="Vzn-Eh-n3G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="jcO-ci-2mr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MAPS" id="Nyp-pO-c9U">
+                        <barButtonItem key="rightBarButtonItem" title="TYPE" id="12u-C9-LsX">
+                            <connections>
+                                <action selector="touchTypeButton:" destination="BYZ-38-t0r" id="0eP-lK-YPb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentView" destination="zon-xa-w0Y" id="1KI-pM-8YH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655" y="-792"/>
+        </scene>
+        <!--StreetView-->
+        <scene sceneID="b59-hk-Fcp">
+            <objects>
+                <viewController id="OSG-Iw-Pq2" customClass="StreetViewController" customModule="MMAAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eBO-lH-JY9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oM-pK-Qwe" customClass="GMSPanoramaView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8oM-pK-Qwe" firstAttribute="top" secondItem="2uC-8v-D1K" secondAttribute="top" id="QLt-nv-Kpv"/>
+                            <constraint firstItem="2uC-8v-D1K" firstAttribute="trailing" secondItem="8oM-pK-Qwe" secondAttribute="trailing" id="o8l-mT-QLV"/>
+                            <constraint firstItem="8oM-pK-Qwe" firstAttribute="leading" secondItem="2uC-8v-D1K" secondAttribute="leading" id="r0a-Eb-ieP"/>
+                            <constraint firstItem="2uC-8v-D1K" firstAttribute="bottom" secondItem="8oM-pK-Qwe" secondAttribute="bottom" id="yKn-0d-6xz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2uC-8v-D1K"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="StreetView" id="jZ6-jE-gi6"/>
+                    <connections>
+                        <outlet property="contentView" destination="8oM-pK-Qwe" id="qFd-Eg-kmo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Zk-sr-eeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1654" y="72"/>
+        </scene>
+        <!--Apple Map-->
+        <scene sceneID="KAp-hl-fqt">
+            <objects>
+                <viewController id="fAf-NN-9tF" customClass="AppleMapViewController" customModule="MMAAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h0M-HI-L6u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FBe-K0-DwT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FBe-K0-DwT" firstAttribute="leading" secondItem="nQ0-EC-cqW" secondAttribute="leading" id="Qq6-U3-OLR"/>
+                            <constraint firstAttribute="bottom" secondItem="FBe-K0-DwT" secondAttribute="bottom" id="V8W-0k-6G3"/>
+                            <constraint firstItem="FBe-K0-DwT" firstAttribute="trailing" secondItem="nQ0-EC-cqW" secondAttribute="trailing" id="Vcf-mb-cvx"/>
+                            <constraint firstItem="FBe-K0-DwT" firstAttribute="top" secondItem="nQ0-EC-cqW" secondAttribute="top" id="lqL-Tb-ooV"/>
+                            <constraint firstItem="FBe-K0-DwT" firstAttribute="top" secondItem="nQ0-EC-cqW" secondAttribute="top" id="t2t-72-iSx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nQ0-EC-cqW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Apple Map" id="S8k-jQ-D7t"/>
+                    <connections>
+                        <outlet property="contentView" destination="FBe-K0-DwT" id="urr-Ws-kjL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMe-6E-O0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630.4347826086957" y="906.69642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AJp-AC-FUO">
+            <objects>
+                <navigationController id="dbh-o4-fh1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mC5-sB-RIs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dGZ-gs-Xe7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F5g-Ef-Rmj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="72"/>
+        </scene>
+    </scenes>
+</document>
